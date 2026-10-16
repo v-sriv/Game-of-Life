@@ -2,6 +2,7 @@ import numpy as np
 import random
 import subprocess
 import time
+import sys
 
 def render_matrix(matrix):
     """
@@ -12,10 +13,10 @@ def render_matrix(matrix):
         for j in range(columns):
             if matrix[i][j] == 1:
                 # This function specifically only renders the live (1s) cells.
-                print("★", end = " ")
+                sys.stdout.write("★")
             else:
-                print(" ", end = " ")
-        print(f"\n", end = " ")
+                sys.stdout.write(" ")
+        sys.stdout.write(f"\n")
 
 def neighbors(x, y):
     """
@@ -28,9 +29,10 @@ def neighbors(x, y):
 
 def clear_screen():
     """Instructs the terminal to clear the screen."""
-    # print("\x1b[2J\x1b[H", end = "", flush = True)
+    # sys.stdout.write("\x1b[2J\x1b[H", end = "", flush = True)
     subprocess.run("cls", shell = True)
-    print("\x1b[?25l")
+    sys.stdout.write("\x1b[?25l")
+    sys.stdout.flush()
 
 rows = 20
 columns = 100
@@ -78,4 +80,5 @@ while(True):
         matrix = new_matrix
 
     iteration += 1
-    time.sleep(0.02)
+    time.sleep(0.05)
+    sys.stdout.flush()
