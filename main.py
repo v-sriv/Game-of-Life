@@ -24,6 +24,7 @@ def neighbors(x, y):
                  [x + 1, y - 1], [x + 1, y], [x + 1, y + 1]]
     return neighbors
 
+new_matrix = np.copy(matrix)
 
 # The range goes from 1 to "rows" - 1 (and not 0 to rows) because the edge indices will return an out-of-bound value when neighbors() is called.
 for x in range(1, rows - 1):
@@ -37,3 +38,12 @@ for x in range(1, rows - 1):
             if matrix[i[0]][i[1]] == 1:
                 counter += 1
             else: continue
+
+        # Updated new matrix for the next iteration/generation with the rules applied.
+        if matrix[x][y] == 1:
+            if counter < 2: new_matrix[x][y] = 0
+            elif counter == 2 or counter == 3: new_matrix[x][y] = 1
+            elif counter > 3: new_matrix[x][y] = 0
+
+        elif matrix[x][y] == 0:
+            if counter == 3: new_matrix[x][y] = 1
