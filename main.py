@@ -14,3 +14,12 @@ for i in range(rows):
         else:
             print(" ", end = " ")
     print(f"\n", end = " ")
+
+def neighbors(x, y):
+    """
+    Returns the coordinates of all eight cells in the Moore neighborhood surrounding the cell at position (x, y).
+    """
+    neighbors = [[x - 1, y - 1], [x - 1, y], [x - 1, y + 1], 
+                 [x, y - 1], [x, y + 1],
+                 [x + 1, y - 1], [x + 1, y], [x + 1, y + 1]]
+    return neighbors
