@@ -1,19 +1,24 @@
 import numpy as np
 import random
+import os
+
+def render_matrix(matrix):
+    """
+    Prints the matrix onto the terminal.
+    """
+    rows, columns = matrix.shape
+    for i in range(rows):
+        for j in range(columns):
+            if matrix[i][j] == 1:
+                # This function specifically only renders the live (1s) cells.
+                print("*", end = " ")
+            else:
+                print(" ", end = " ")
+        print(f"\n", end = " ")
 
 rows = 10
 columns = 100
 matrix = np.full((rows, columns), 0)
-
-
-for i in range(rows):
-    for j in range(columns):
-        matrix[i][j] = random.randint(0, 1)
-        if matrix[i][j] == 1:
-            print("*", end = " ")
-        else:
-            print(" ", end = " ")
-    print(f"\n", end = " ")
 
 def neighbors(x, y):
     """
