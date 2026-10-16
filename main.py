@@ -12,7 +12,7 @@ def render_matrix(matrix):
         for j in range(columns):
             if matrix[i][j] == 1:
                 # This function specifically only renders the live (1s) cells.
-                print("*", end = " ")
+                print("★", end = " ")
             else:
                 print(" ", end = " ")
         print(f"\n", end = " ")
