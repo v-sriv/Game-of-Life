@@ -19,6 +19,14 @@ def render_matrix(matrix):
 rows = 10
 columns = 100
 matrix = np.full((rows, columns), 0)
+render_matrix(matrix)
+
+seed = round(0.60 * (rows * columns))
+for i in range(seed):
+    x = random.randint(1, rows - 2)
+    y = random.randint(1, columns - 2)
+    matrix[x][y] = 1
+render_matrix(matrix)
 
 def neighbors(x, y):
     """
