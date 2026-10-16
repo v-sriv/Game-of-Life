@@ -14,5 +14,7 @@ The rules which are followed and decides the fate of the evolution of a cell, or
 - Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 ```
 
+![Represenation of the project.](./Game%20of%20Life.gif)
+
 ## References
 - [Wikipedia - John Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
