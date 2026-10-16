@@ -78,4 +78,4 @@ while(True):
         matrix = new_matrix
 
     iteration += 1
-    time.sleep(0.2)
+    time.sleep(0.02)
