@@ -30,6 +30,7 @@ def clear_screen():
     """Instructs the terminal to clear the screen."""
     # print("\x1b[2J\x1b[H", end = "", flush = True)
     subprocess.run("cls", shell = True)
+    print("\x1b[?25l")
 
 rows = 20
 columns = 100
